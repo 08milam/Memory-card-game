@@ -1,0 +1,168 @@
+/* 
+PORJECT NAME: matching game
+FILE: style.html
+DATE: 10/30/2023
+MOD DATE: 
+MOD CHANGES: 
+MOD LINE: 
+VERSION: 0.0.1
+PROGRAMER: Charles Matthew Milam Jr
+ */
+
+/* Global Styles */
+html, body {
+  background-color: rgb(100, 101, 98);
+  margin: 0;
+}
+
+/* Container Styles */
+.contentcontainer {
+  background-color: rgb(67, 67, 67);
+}
+
+.buttoncontainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Start Screen Styles */
+.startMenu {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(100, 101, 98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.startMessage {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(46, 46, 46);
+}
+
+.bestScore, .startBtn, .projectsBtn {
+  width: 250px;
+  height: 75px;
+  font-size: 25px;
+  font-weight: 900;
+  border-radius: 10px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.bestScore {
+  color: #5c3d3d;
+  background-color: rgb(69, 95, 125);
+}
+
+.startBtn {
+  background-color: rgb(58, 96, 81);
+  color: rgb(221, 239, 255);
+}
+
+.startBtn:hover, .projectsBtn:hover {
+  background-color: rgb(102, 149, 97);
+  box-shadow: 0 0 5px black;
+}
+
+.projectsBtn {
+  background-color: rgb(78, 58, 96);
+  color: rgb(221, 255, 242);
+  margin: 20px;
+}
+
+/* Game Screen Styles */
+.game {
+  width: 100%;
+  background-color: rgb(100, 101, 98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  perspective: 800px;
+}
+
+.startmeueBtn, .reset {
+  width: 250px;
+  height: 75px;
+  font-size: 25px;
+  font-weight: 900;
+  border-radius: 10px;
+  border: 0;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  margin: 16px;
+  cursor: pointer;
+}
+
+.startmeueBtn:hover, .reset:hover {
+  background-color: rgb(123, 154, 190);
+  box-shadow: 0 0 5px black;
+}
+
+/* Game Logic Styles */
+.tilecontainer {
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 900px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.tile {
+  width: 13vw;
+  height: 13vw;
+  margin: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.back, .front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  border: 2px solid;
+  pointer-events: none;
+}
+
+.tile.flip {
+  transform: rotateY(180deg);
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+/* Game Menu Control and Transition Styles */
+.startMenu, .game {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.contentcontainer {
+  transform-style: preserve-3d;
+  transition: all 2s cubic-bezier(0.155, 0.75, 0.52, 1.25);
+}
+
+.contentcontainer.startgame {
+  transform: rotateY(180deg);
+}
+
+.startMenu {
+  transform: rotateY(180deg);
+}
